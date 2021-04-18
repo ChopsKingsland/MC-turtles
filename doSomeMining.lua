@@ -18,7 +18,11 @@ end
 
 for a = 1, z, 1 do
     for b = 1, x - 1, 1 do
-        turtle.dig()
+        while(turtle.detect()) do
+            turtle.dig()
+            sleep(0.25)
+        end
+        
         turtle.forward()
 
     end
@@ -42,4 +46,4 @@ for a = 1, z, 1 do
     
 end
 
-print("Mining a " .. x .. "x" .. z .. " area")
+print("Mining a " .. x .. "x" .. z .. " area, with a depth of " .. y)
